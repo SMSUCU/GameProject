@@ -40,6 +40,14 @@ while True:
         levels.entrance_level(stdscr, height, width)
     if current_level == 1:
         levels.level(stdscr, height, width, True)
+    if current_level == 2:
+        levels.level(stdscr, height, width, True)
+    if current_level == 3:
+        levels.level(stdscr, height, width, True)
+    if current_level == 4:
+        levels.level(stdscr, height, width, True)
+    if current_level == 5:
+        levels.level(stdscr, height, width, False)
     border = stdscr.border(0, 0, 0, 0, 0, 0, 0, 0)
     player.body(stdscr, y, x)
     stdscr.refresh

@@ -51,12 +51,12 @@ def start(window):
     window.getkey()
     window.clear()
     window.addstr('''Let's start our game)
-    You can move with arrows or WASD. Go ahead to your goal.
+    You can move with arrows or WASD. Go ahead to your goal. To exit press 'Q'
     Good luck)''')
     window.getkey()
     window.clear()
     window.addstr('''Oh wise hero, since your early childhood your dream was to become a member of order.
     And now you are close to your dream. Only five test in Labirintum stands between you and becoming part of order.
     Now you are ready to make last step to your goal...''')
-    window.getkey
-    window.clear
+    window.getkey()
+    window.clear()
