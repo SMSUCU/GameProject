@@ -1,6 +1,7 @@
 def movement(window, height, width, obstacle, y, x, level):
     import curses
     key = window.getch()
+    old_level = None
     for area in range(5):
         for len in range(6):
             window.addch(y + len, x + area, ' ')
@@ -23,11 +24,12 @@ def movement(window, height, width, obstacle, y, x, level):
         if chr(window.inch(y, x)) in obstacle or x == 1:
             x += 1
     if key == ord('q'):
-        return y, x, False, level
+        return y, x, False, level, old_level
     if chr(window.inch(y, x)) == '🧱':
         level += 1
-        return y, x, True, level
-    return y, x, True, level
+        old_level = level
+        return y, x, True, level, old_level
+    return y, x, True, level, old_level
 
 
 def body(window, y, x):

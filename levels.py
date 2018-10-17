@@ -28,3 +28,23 @@ def entrance_level(window, height, width):
     tree(height - 6, width - 50)
     tree(height - 8, width - 20)
     tree(height - 4, 15)
+
+
+def level(window, height, width, question_check):
+    for y in range(height - 1):
+        for x in range(11):
+            window.addstr(y, x, 'H')
+        for x in range(width-11, width - 1):
+            window.addstr(y, x, 'H')
+    for x in range(11, width-11):
+        for y in range(11):
+            window.addstr(y, x, 'H')
+        for y in range(height-5, height-1):
+            window.addstr(y, x, 'H')
+    for y in range(height-5, height-1):
+        for x in range(86, 118):
+            window.addstr(y, x, " ")
+    if question_check == True:
+        for y in range(11):
+            for x in range(86, 118):
+                window.addstr(y, x, "🧱")
