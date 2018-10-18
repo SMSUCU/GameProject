@@ -14,4 +14,6 @@ def happy_number():
         if number not in lst:
             return False
     return ifhappy(number)
+
+
 print(happy_number())
