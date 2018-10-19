@@ -4,8 +4,6 @@ def buttons():
 
     top = tkinter.Tk()
 
-    value = True
-
     def yes():
         global value
         value = True
