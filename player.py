@@ -27,6 +27,8 @@ def movement(window, height, width, obstacle, y, x, level):
                     trash, answer = happy.happy_test(height, width, window)
                 elif level == 4:
                     trash, answer = ulamfunc.ulam_test(height, width, window)
+                elif level == 5:
+                    answer == test4all.test_all()
                 if answer == True:
                     question_check += 1
                 elif answer == False:
