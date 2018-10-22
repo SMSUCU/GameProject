@@ -6,7 +6,7 @@ def movement(window, height, width, obstacle, y, x, level):
     import test4all
     key = window.getch()
     old_level = None
-    question_check = 0
+    question_check = 1
     for area in range(5):
         for len in range(6):
             window.addch(y + len, x + area, ' ')
@@ -15,11 +15,14 @@ def movement(window, height, width, obstacle, y, x, level):
         if chr(window.inch(y, x)) in obstacle or y == 1:
             y += 1
         if chr(window.inch(y, x)) == "_":
+            question_check = 0
             while question_check in range(0, 5):
                 if level == 1:
-                    trash, answer = parni.parni(height, width, level, window)
+                    trash, answer = parni.parni(
+                        height, width, level, window)
                 elif level == 2:
-                    trash, answer = parni.parni(height, width, level, window)
+                    trash, answer = parni.parni(
+                        height, width, level, window)
                 elif level == 3:
                     trash, answer = happy.happy_test(height, width, window)
                 elif level == 4:
@@ -28,7 +31,7 @@ def movement(window, height, width, obstacle, y, x, level):
                     question_check += 1
                 elif answer == False:
                     question_check -= 1
-            y -= 1
+            y += 2
     if key == ord('s') or key == curses.KEY_DOWN:
         y += 1
         if y == height - 7:
@@ -44,7 +47,7 @@ def movement(window, height, width, obstacle, y, x, level):
         if chr(window.inch(y, x)) in obstacle or x == 1:
             x += 1
     if key == ord('q'):
-        return y, x, False, level, old_level, 0
+        return y, x, False, level, old_level, None
     if chr(window.inch(y, x)) == '🧱':
         level += 1
         old_level = level

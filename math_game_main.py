@@ -36,7 +36,9 @@ while True:
         current_level = 0
         stdscr.clear()
         y, x = basic_player_generation()
-    elif question_value == 4:
+    elif question_value == 0:
+        question_check = False
+    elif question_value == 5:
         question_check = True
     if mode == False:
         break
