@@ -32,14 +32,15 @@ y, x = basic_player_generation()
 while True:
     y, x, mode, current_level, old_level, question_value = player.movement(
         stdscr, height, width, obstacle, y, x, current_level)
-    if question_value < 0:
-        current_level = 0
-        stdscr.clear()
-        y, x = basic_player_generation()
-    elif question_value == 0:
-        question_check = False
-    elif question_value == 5:
-        question_check = True
+    if question_value != None:
+        if question_value < 0:
+            current_level = 0
+            stdscr.clear()
+            y, x = basic_player_generation()
+        elif question_value == 0:
+            question_check = False
+        elif question_value == 5:
+            question_check = True
     if mode == False:
         break
     if old_level == current_level:
