@@ -1,41 +1,24 @@
-
-def ulam():
-    import random
-    lst = [1, 2, 3, 4, 6, 8, 11, 13, 16, 18, 26,
-           28, 36, 38, 47, 48, 53, 57, 62, 69, 72, 77,
-           82, 87, 97, 99, 102, 106, 114, 126, 131, 138,
-           145, 148]
-    lst2 = list(range(151))
-    lst2.extend(lst)
-    a = random.choice(lst2)
-    print(a)
-
-    def perevirka(a):
-        if a in lst:
-            return True
-        else:
-            return False
-    return(perevirka(a))
-
-
-print(ulam())
-
-
-def sumulam():
-    import random
-    ulamlist = [1, 2, 3, 4, 6, 8, 11, 13, 16, 18, 26,
-                28, 36, 38, 47, 48, 53, 57, 62, 69, 72, 77,
-                82, 87, 97, 99, 102, 106, 114, 126, 131, 138,
-                145, 148]
-    summ = random.randint(1, 80), random.randint(1, 80)
-    sumlist = []
-    sumlist.append(summ[0])
-    sumlist.append(summ[1])
-    print(sumlist)
-    if sumlist[0] + sumlist[1] in ulamlist:
-        return True
-    else:
-        return False
-
-
-print(sumulam())
+def ulam_generator(chyslo):
+    ''' (int) -> list
+    This function returns a list of ulam numbers in sequence (chyslo)
+    >>> ulam_generator(30)
+    [1, 2, 3, 4, 6, 8, 11, 13, 16, 18, 26, 28, 36, 38, 47, 48, 53, 57, 62, 69, 72, 77, 82, 87, 97, 99, 102, 106, 114, 126, 131, 138]
+    >>> ulam_generator(15)
+    [1, 2, 3, 4, 6, 8, 11, 13, 16, 18, 26, 28, 36, 38, 47, 48, 53]
+    '''
+    ulam = [1,2]
+    for i in range(chyslo):
+        lst = []
+        for each in ulam:
+            for every in ulam:
+                if each != every:
+                     lst.append(each + every)
+        while True:
+            a = min(lst)
+            if lst.count(a) == 2 and ulam.count(a) < 1:
+                ulam.append(a)
+                break
+            else:
+                for i in range(lst.count(a)):
+                    lst.remove(a)
+    return ulam
