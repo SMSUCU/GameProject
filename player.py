@@ -36,6 +36,6 @@ def body(window, y, x):
     window.addstr(y, x+1, "_П_")
     window.addstr(y+1, x+2, "@")
     window.addstr(y+2, x, "--|--")
-    window.addstr(y+3, x, "  |  ")
+    window.addstr(y+3, x+2, "|")
     window.addstr(y+4, x+1, "| |")
     window.addstr(y+5, x+1, "| |")
