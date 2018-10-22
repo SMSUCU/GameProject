@@ -50,9 +50,10 @@ while True:
         levels.entrance_level(stdscr, height, width)
     if current_level in range(1, 5):
         levels.level(stdscr, height, width, question_check)
-        levels.professor(height//2 - 3, width//2 - 2, stdscr)
+        levels.professor(height//2 - 3, width//2 - 2, stdscr, current_level)
     if current_level == 5:
         levels.level(stdscr, height, width, False)
+        levels.professor(height//2 - 3, width//2 - 2, stdscr, current_level)
     border = stdscr.border(0, 0, 0, 0, 0, 0, 0, 0)
     player.body(stdscr, y, x)
     stdscr.refresh

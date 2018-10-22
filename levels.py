@@ -50,12 +50,26 @@ def level(window, height, width, question_check):
                 window.addstr(y, x, "🧱")
 
 
-def professor(y, x, window):
-    window.addstr(y, x + 3, "###")
-    window.addstr(y+1, x + 2, "#####")
+def professor(y, x, window, level):
+    if level == 1 or level == 4:
+        window.addstr(y, x + 3, "###")
+        window.addstr(y+1, x + 2, "#####")
+    elif level == 2 or level == 5:
+        window.addstr(y, x + 3, "///")
+        window.addstr(y+1, x + 2, "/////")
+    elif level == 3:
+        window.addstr(y+1, x + 2, "/‾‾‾\\")
     window.addstr(y+2, x + 2, "|⦿△⦿|")
-    window.addstr(y+3, x + 2, "| — |")
-    window.addstr(y+4, x + 2, "|_W_|")
+    if level == 2 or level == 4:
+        window.addstr(y+3, x + 2, "| — |")
+    elif level == 1 or level == 3 or level == 5:
+        window.addstr(y+3, x + 2, "| ⏝ |")
+    if level == 1 or level == 5:
+        window.addstr(y+4, x + 2, "|_ _|")
+    elif level == 2 or level == 3:
+        window.addstr(y+4, x + 2, "|_W_|")
+    elif level == 4:
+        window.addstr(y+4, x + 2, "|@@@|")
     window.addstr(y+5, x + 3, "| |")
     window.addstr(y+6, x + 1, "/‾   ‾\\")
     window.addstr(y+7, x, "/   ∞   \\")
