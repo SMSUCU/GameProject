@@ -18,10 +18,4 @@ def parni():
     a = random.randint(1, 100000)
     b = random.randint(1, 100000)
 
-    def suma(a, b):
-        if (a+b) % 2 == 0:
-            return True
-        else:
-            return False
-
     return perevirka(a), suma(a, b)
