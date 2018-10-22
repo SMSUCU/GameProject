@@ -17,5 +17,3 @@ if player_value == value:
     print('Correct')
 else:
     print('Wrong')
-
-
