@@ -9,7 +9,7 @@ def happy_test():
     lst1 = list(range(201))
     lst1.extend(lst)
     number = random.choice(lst1)
-    window.addstr('Is ' + number + ' a happy number?')
+    window.addstr(y, x, 'Is ' + number + ' a happy number?')
     if number in lst:
         value = True
     else:
@@ -17,6 +17,6 @@ def happy_test():
 
     player_value = buttons.buttons()
     if player_value == value:
-        print('Correct')
+        return number, True
     else:
-        print('Wrong')
+        return number, False
