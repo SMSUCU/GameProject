@@ -12,10 +12,28 @@ def suma(a, b):
         return False
 
 
-def parni():
+def parni(height, width, level, window):
     import random
-
-    a = random.randint(1, 100000)
-    b = random.randint(1, 100000)
-
-    return perevirka(a), suma(a, b)
+    import buttons
+    y, x = height//2 - 4, width//2 - 4
+    number = random.randint(1, 1000)
+    b = random.randint(1, 1000)
+    if level == 1:
+        window.addstr(y, x, 'Is ' + str(number) + ' a even number?')
+        window.refresh()
+        value = perevirka(number)
+        player_value = buttons.buttons()
+    elif level == 2:
+        window.addstr(y, x, 'Is sum of ' + str(number) +
+                      ' and ' + str(b) + ' an even number?')
+        window.refresh()
+        value = suma(number, b)
+        player_value = buttons.buttons()
+    if player_value == value:
+        window.addstr(y, x, 'Corect')
+        window.refresh()
+        return number, True
+    else:
+        window.addstr(y, x, 'Wrong')
+        window.refresh()
+        return number, False

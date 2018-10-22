@@ -48,3 +48,19 @@ def level(window, height, width, question_check):
         for y in range(11):
             for x in range(86, 118):
                 window.addstr(y, x, "🧱")
+
+
+def professor(y, x, window):
+    window.addstr(y, x + 3, "###")
+    window.addstr(y+1, x + 2, "#####")
+    window.addstr(y+2, x + 2, "|⦿△⦿|")
+    window.addstr(y+3, x + 2, "| — |")
+    window.addstr(y+4, x + 2, "|_W_|")
+    window.addstr(y+5, x + 3, "| |")
+    window.addstr(y+6, x + 1, "/‾   ‾\\")
+    window.addstr(y+7, x, "/   ∞   \\")
+    window.addstr(y+8, x, "|  α Ω  |")
+    window.addstr(y+9, x, "|   π   |")
+    window.addstr(y+10, x, "|       |")
+    window.addstr(y+11, x, "|       |")
+    window.addstr(y+12, x, "|_______|")

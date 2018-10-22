@@ -24,14 +24,15 @@ def ulam_generator(chyslo):
     return ulam
 
 
-def ulam_test():
+def ulam_test(height, width, window):
     import random
-
+    y, x = height//2 - 4, width//2 - 4
     lst = ulam_generator(100)
     lst1 = list(range(201))
     lst1.extend(lst)
     number = random.choice(lst1)
-    window.addstr(y, x, 'Is ' + number + ' a Ulam number?')
+    window.addstr(y, x, 'Is ' + str(number) + ' a Ulam number?')
+    window.refresh()
     if number in lst:
         value = True
     else:
@@ -39,6 +40,10 @@ def ulam_test():
 
     player_value = buttons.buttons()
     if player_value == value:
+        window.addstr(y, x, 'Corect')
+        window.refresh()
         return number, True
     else:
+        window.addstr(y, x, 'Wrong')
+        window.refresh()
         return number, False
