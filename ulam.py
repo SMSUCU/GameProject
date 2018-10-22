@@ -6,13 +6,13 @@ def ulam_generator(chyslo):
     >>> ulam_generator(15)
     [1, 2, 3, 4, 6, 8, 11, 13, 16, 18, 26, 28, 36, 38, 47, 48, 53]
     '''
-    ulam = [1,2]
+    ulam = [1, 2]
     for i in range(chyslo):
         lst = []
         for each in ulam:
             for every in ulam:
                 if each != every:
-                     lst.append(each + every)
+                    lst.append(each + every)
         while True:
             a = min(lst)
             if lst.count(a) == 2 and ulam.count(a) < 1:
