@@ -40,10 +40,12 @@ def ulam_test(height, width, window):
 
     player_value = buttons.buttons()
     if player_value == value:
-        window.addstr(y, x, 'Corect')
+        window.addstr(y, x, 'Correct. Press any key               ')
         window.refresh()
+        window.getkey()
         return number, True
     else:
-        window.addstr(y, x, 'Wrong')
+        window.addstr(y, x, 'Wrong. Press any key                 ')
         window.refresh()
+        window.getkey()
         return number, False
