@@ -17,6 +17,3 @@ def parni():
             return False
 
     return perevirka(a), suma(a, b)
-
-
-print(parni())
