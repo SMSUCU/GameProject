@@ -22,7 +22,7 @@ def basic_player_generation():
     return y, x
 
 
-player_name = text.start(stdscr)
+text.start(stdscr)
 levels.entrance_level(stdscr, height, width)
 border = stdscr.border(0, 0, 0, 0, 0, 0, 0, 0)
 y, x = basic_player_generation()
