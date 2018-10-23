@@ -2,6 +2,9 @@ import curses
 
 
 def start(window):
+    '''(window)
+    This function prints starting text.
+    '''
     window.addstr('''Our game was made to teach you some math.
 Don't worry you wont be bored... at least to much)
 To start press any key''')
@@ -62,6 +65,9 @@ Now you are ready to make last step to your goal...''')
 
 
 def end_game(height, width, window):
+    '''(int, int, window)
+    This function prints ending text.
+    '''
     y, x = height//2 - 4, width//2 - 4
     window.addstr(y, x, 'You win')
     window.getkey()
