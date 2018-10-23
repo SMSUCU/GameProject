@@ -1,12 +1,9 @@
-import curses
-
-
 def start(window):
     '''(window)
     This function prints starting text.
     '''
     window.addstr('''Our game was made to teach you some math.
-Don't worry you wont be bored... at least to much)
+Don't worry, you wont be bored... at least to much
 To start press any key''')
     window.getkey()
     window.clear()
@@ -53,12 +50,12 @@ it yields no remainder.''')
     window.getkey()
     window.clear()
     window.addstr('''Let's start our game)
-You can move with arrows or WASD. Go ahead to your goal. To exit press 'Q'
+You can move with arrows or WASD. Go ahead to your goal. To exit press 'Q'. Go to professor to start trial.
 Good luck)''')
     window.getkey()
     window.clear()
-    window.addstr('''Oh wise hero, since your early childhood your dream was to become a member of order.
-And now you are close to your dream. Only five test in Labirintum stands between you and becoming part of order.
+    window.addstr('''Oh wise hero, since your early childhood your dream was to become a member of Ordinius mathematicorum.
+And now you are close to your dream. Only five test in APPS Labirintum stands between you and becoming a part of order.
 Now you are ready to make last step to your goal...''')
     window.getkey()
     window.clear()
@@ -69,6 +66,15 @@ def end_game(height, width, window):
     This function prints ending text.
     '''
     y, x = height//2 - 4, width//2 - 4
-    window.addstr(y, x, 'You win')
+    window.addstr(y, x, 'Our congratulations!...')
     window.getkey()
-    window.addstr(y, x, '        ')
+    window.addstr(
+        y, x - 28, 'We know it was hard to get through all of these trials but you have done it! Well done!...')
+    window.getkey()
+    window.addstr(
+        y, x - 24, 'So now you are ready to be consecrated to magisters of Ordinius mathematicorum....')
+    window.getkey()
+    window.addstr(y, x, 'Since this minute you should remember:...')
+    window.getkey()
+    window.addstr(y, x, 'Mathematica quod honoris - super omnia!')
+    window.getkey()
