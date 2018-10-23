@@ -1,7 +1,7 @@
 import curses
-import levels
-import player
-import game_text
+import SMS_levels
+import SMS_player
+import SMS_text
 
 
 stdscr = curses.initscr()
