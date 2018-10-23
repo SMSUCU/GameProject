@@ -1,5 +1,7 @@
 import random
 import SMS_buttons
+
+
 def checkhappy():
     '''
     None -> list
@@ -33,9 +35,6 @@ def happy_test(height, width, window):
     This function generates a number for player to choose whether it is happy one or not 
     Then it checks if players choice is correct and returns the result
     '''
-    # lst = [1, 7, 10, 13, 19, 23, 28, 31, 32, 44,
-    #        49, 68, 70, 79, 82, 86, 91, 94, 97, 100, 103, 109,
-    #        129, 130, 133, 139, 167, 176, 188, 190, 192, 193]
     y, x = height//2 - 4, width//2 - 4
     lst = checkhappy()
     lst1 = list(range(101))
@@ -48,7 +47,7 @@ def happy_test(height, width, window):
     else:
         value = False
 
-    player_value = buttons.buttons()
+    player_value = SMS_buttons.buttons()
     if player_value == value:
         window.addstr(y, x, 'Correct. Press any key                ')
         window.refresh()

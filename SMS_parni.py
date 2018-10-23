@@ -1,3 +1,7 @@
+import random
+import SMS_buttons
+
+
 def perevirka(a):
     '''(int) -> bool
     This function returns True if number a is even.
@@ -32,8 +36,6 @@ def parni(height, width, level, window):
     ''' (int, int, int, window) -> bool
     This function returns result of even numbers test.
     '''
-    import random
-    import SMS_buttons
     y, x = height//2 - 4, width//2 - 4
     number = random.randint(1, 1000)
     b = random.randint(1, 1000)
@@ -41,13 +43,13 @@ def parni(height, width, level, window):
         window.addstr(y, x, 'Is ' + str(number) + ' a even number?   ')
         window.refresh()
         value = perevirka(number)
-        player_value = buttons.buttons()
+        player_value = SMS_buttons.buttons()
     elif level == 2:
         window.addstr(y, x, 'Is sum of ' + str(number) +
                       ' and ' + str(b) + ' an even number?')
         window.refresh()
         value = suma(number, b)
-        player_value = buttons.buttons()
+        player_value = SMS_buttons.buttons()
     if player_value == value:
         window.addstr(y, x, 'Correct. Press any key                      ')
         window.refresh()

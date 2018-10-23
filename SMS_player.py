@@ -1,12 +1,14 @@
+import curses
+import SMS_parni
+import SMS_happy
+import SMS_ulamfunc
+import SMS_test4all
+
+
 def movement(window, height, width, obstacle, y, x, level):
     '''(window, int, int, list, int, int, int) -> int, int, bool, int, int, int
     This function defines rules of player's movements.
     '''
-    import curses
-    import parni
-    import happy
-    import ulamfunc
-    import test4all
     key = window.getch()
     old_level = None
     question_check = 1
@@ -21,17 +23,17 @@ def movement(window, height, width, obstacle, y, x, level):
             question_check = 0
             while question_check in range(0, 5):
                 if level == 1:
-                    answer = parni.parni(
+                    answer = SMS_parni.parni(
                         height, width, level, window)
                 elif level == 2:
-                    answer = parni.parni(
+                    answer = SMS_parni.parni(
                         height, width, level, window)
                 elif level == 3:
-                    answer = happy.happy_test(height, width, window)
+                    answer = SMS_happy.happy_test(height, width, window)
                 elif level == 4:
-                    answer = ulamfunc.ulam_test(height, width, window)
+                    answer = SMS_ulamfunc.ulam_test(height, width, window)
                 elif level == 5:
-                    answer = test4all.test_all(height, width, window)
+                    answer = SMS_test4all.test_all(height, width, window)
                 if answer == True:
                     question_check += 1
                 elif answer == False:
