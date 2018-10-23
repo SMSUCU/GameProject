@@ -1,4 +1,12 @@
 def perevirka(a):
+    '''(int) -> bool
+    This function returns True if number a is even.
+    Otherwise it returns False.
+    >>> perevirka(4)
+    True
+    >>> perevirka(23)
+    False
+    '''
     if (a % 2 == 0):
         return True
     else:
@@ -6,6 +14,14 @@ def perevirka(a):
 
 
 def suma(a, b):
+    '''(int, int) -> bool
+    This function returns True if sum of a and b is even.
+    Otherwise it returns False.
+    >>> suma(9, 7)
+    True
+    >>> suma(3, 20)
+    False
+    '''
     if (a+b) % 2 == 0:
         return True
     else:
@@ -13,6 +29,9 @@ def suma(a, b):
 
 
 def parni(height, width, level, window):
+    ''' (int, int, int, window) -> bool
+    This function returns result of even numbers test.
+    '''
     import random
     import buttons
     y, x = height//2 - 4, width//2 - 4
