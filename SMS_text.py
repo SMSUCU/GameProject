@@ -72,9 +72,10 @@ def end_game(height, width, window):
         y, x - 28, 'We know it was hard to get through all of these trials but you have done it! Well done!...')
     window.getkey()
     window.addstr(
-        y, x - 24, 'So now you are ready to be consecrated to magisters of Ordinius mathematicorum....')
+        y, x - 28, '    So now you are ready to be consecrated to magisters of Ordinius mathematicorum....    ')
     window.getkey()
-    window.addstr(y, x, 'Since this minute you should remember:...')
+    window.addstr(
+        y, x-28, '                                Since this minute you should remember:...                  ')
     window.getkey()
-    window.addstr(y, x, 'Mathematica quod honoris - super omnia!')
+    window.addstr(y, x, 'Mathematica quod honoris - super omnia!    ')
     window.getkey()

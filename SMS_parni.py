@@ -40,7 +40,7 @@ def parni(height, width, level, window):
     number = random.randint(1, 1000)
     b = random.randint(1, 1000)
     if level == 1:
-        window.addstr(y, x, 'Is ' + str(number) + ' a even number?   ')
+        window.addstr(y, x, 'Is ' + str(number) + ' an even number?   ')
         window.refresh()
         value = perevirka(number)
         player_value = SMS_buttons.buttons()
