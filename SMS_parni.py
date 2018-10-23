@@ -33,7 +33,7 @@ def parni(height, width, level, window):
     This function returns result of even numbers test.
     '''
     import random
-    import buttons
+    import SMS_buttons
     y, x = height//2 - 4, width//2 - 4
     number = random.randint(1, 1000)
     b = random.randint(1, 1000)
