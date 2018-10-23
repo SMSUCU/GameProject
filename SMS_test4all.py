@@ -1,23 +1,23 @@
+import SMS_buttons
+import random
+import SMS_parni
+import SMS_happy
+import SMS_ulamfunc
+
+
 def test_all(height, width, window):
     '''(int, int, window) -> bool
     This function returns result of test for all number types.
     '''
-    import buttons
-    import random
-    import parni
-    import happy
-    import ulamfunc
     number = random.randint(1, 200)
     value = []
     y, x = height // 2 - 4, width // 2 - 4
     window.addstr(y, x, 'What type of number is ' + str(number) + '?')
     window.refresh()
-    player_value = buttons.buttons5()
-    if parni.perevirka(number):
+    player_value = SMS_buttons.buttons5()
+    if SMS_parni.perevirka(number):
         value.append(1)
-    if number in happy.checkhappy():
-        value.append(2)
-    if number in ulamfunc.ulam_generator():
+    if number in SMS_ulamfunc.ulam_generator():
         value.append(3)
     if len(value) == 0:
         value.append(4)

@@ -1,3 +1,7 @@
+import random
+import SMS_buttons
+
+
 def ulam_generator():
     ''' (None) -> list
     This function returns a list of 27 ulam numbers
@@ -26,8 +30,6 @@ def ulam_test(height, width, window):
     '''(int, int, window) -> bool
     This function returns result of ulam numbers test.
     '''
-    import random
-    import buttons
     y, x = height//2 - 4, width//2 - 4
     lst = ulam_generator()
     lst1 = list(range(101))
@@ -40,7 +42,7 @@ def ulam_test(height, width, window):
     else:
         value = False
 
-    player_value = buttons.buttons()
+    player_value = SMS_buttons.buttons()
     if player_value == value:
         window.addstr(y, x, 'Correct. Press any key               ')
         window.refresh()
