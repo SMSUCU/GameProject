@@ -27,6 +27,12 @@ def checkhappy():
 
 
 def happy_test(height, width, window):
+    '''
+    (int, int, window) -> bool
+
+    This function generates a number for player to choose whether it is happy one or not 
+    Then it checks if players choice is correct and returns the result
+    '''
     # lst = [1, 7, 10, 13, 19, 23, 28, 31, 32, 44,
     #        49, 68, 70, 79, 82, 86, 91, 94, 97, 100, 103, 109,
     #        129, 130, 133, 139, 167, 176, 188, 190, 192, 193]

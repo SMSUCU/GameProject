@@ -1,4 +1,9 @@
 def buttons():
+    
+    '''
+    This function creates buttons for level 5 to give player a possibility to choose answers
+    '''
+
     import tkinter
 
     top = tkinter.Tk()
