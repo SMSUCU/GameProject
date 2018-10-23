@@ -19,12 +19,21 @@ def buttons():
         value = 3
         top.destroy()
 
+    def nothing():
+        global value
+        value = 4
+        top.destroy()
+
     b = tkinter.Button(top, text='Even', fg='black', command=parne)
     c = tkinter.Button(top, text='Happy', fg='red', command=happy)
     d = tkinter.Button(top, text='Ulam', fg='green', command=ulama)
+    e = tkinter.Button(top, text='None of given', fg='blue', command=nothing)
 
     b.pack()
     c.pack()
     d.pack()
+    e.pack()
     top.mainloop()
     return value
+
+buttons()
