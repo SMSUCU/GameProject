@@ -1,7 +1,7 @@
 import curses
 import levels
 import player
-import text
+import game_text
 
 
 stdscr = curses.initscr()
@@ -12,6 +12,7 @@ curses.curs_set(0)
 height, width = stdscr.getmaxyx()
 obstacle = ["Ж", "H", "I", "|", "/", "#"]
 current_level = 0
+win = False
 mode = True
 question_check = False
 question_value = 0
@@ -24,7 +25,7 @@ def basic_player_generation():
     return y, x
 
 
-text.start(stdscr)
+game_text.start(stdscr)
 levels.entrance_level(stdscr, height, width)
 border = stdscr.border(0, 0, 0, 0, 0, 0, 0, 0)
 y, x = basic_player_generation()
@@ -55,7 +56,16 @@ while True:
     if current_level == 5:
         levels.level(stdscr, height, width, False)
         levels.professor(height//2 - 3, width//2 - 2, stdscr, current_level)
+        if question_check == True:
+            levels.professor(height//2 - 1, width//2 - 12, stdscr, 1)
+            levels.professor(height//2 - 1, width//2 + 7, stdscr, 2)
+            levels.professor(height//2 + 1, width//2 - 23, stdscr, 3)
+            levels.professor(height//2 + 1, width//2 + 18, stdscr, 4)
+            win = True
+            break
     border = stdscr.border(0, 0, 0, 0, 0, 0, 0, 0)
     player.body(stdscr, y, x)
     stdscr.refresh
+if win:
+    game_text.end_game(height, width, stdscr)
 curses.endwin()

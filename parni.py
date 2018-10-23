@@ -19,7 +19,7 @@ def parni(height, width, level, window):
     number = random.randint(1, 1000)
     b = random.randint(1, 1000)
     if level == 1:
-        window.addstr(y, x, 'Is ' + str(number) + ' a even number?')
+        window.addstr(y, x, 'Is ' + str(number) + ' a even number?   ')
         window.refresh()
         value = perevirka(number)
         player_value = buttons.buttons()
@@ -33,9 +33,11 @@ def parni(height, width, level, window):
         window.addstr(y, x, 'Correct. Press any key                      ')
         window.refresh()
         window.getkey()
-        return number, True
+        window.addstr(y, x, '                                     ')
+        return True
     else:
         window.addstr(y, x, 'Wrong. Press any key                       ')
         window.refresh()
         window.getkey()
-        return number, False
+        window.addstr(y, x, '                                     ')
+        return False

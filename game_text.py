@@ -59,3 +59,10 @@ And now you are close to your dream. Only five test in Labirintum stands between
 Now you are ready to make last step to your goal...''')
     window.getkey()
     window.clear()
+
+
+def end_game(height, width, window):
+    y, x = height//2 - 4, width//2 - 4
+    window.addstr(y, x, 'You win')
+    window.getkey()
+    window.addstr(y, x, '        ')

@@ -1,29 +1,30 @@
-def test_all():
-    import buttons5
+def test_all(height, width, window):
+    import buttons
     import random
     import parni
     import happy
-    import ulam
-    i = random.randint(1, 4)
-    if i == 1:
-        a = random.randint(1, 100)
-        if parni.perevirka(a) == True:
-            value = 1
-    elif i == 2:
-        a, bools == happy.happy_test()
-        if bools == True:
-            value = 2
-
-    elif ulamfunc() == True:
-        value = 3
+    import ulamfunc
+    number = random.randint(1, 200)
+    value = []
+    y, x = height // 2 - 4, width // 2 - 4
+    window.addstr(y, x, 'What type of number is ' + str(number) + '?')
+    window.refresh()
+    player_value = buttons.buttons5()
+    if parni.perevirka(number):
+        value.append(1)
+    if number in happy.checkhappy():
+        value.append(2)
+    if number in ulamfunc.ulam_generator():
+        value.append(3)
+    if len(value) == 0:
+        value.append(4)
+    if player_value in value:
+        window.addstr(y, x, 'Correct. Press any key                      ')
+        window.refresh()
+        window.getkey()
+        return True
     else:
-        value = None
-    print(a)
-    print('What kind of number is', a, '?')
-    return value == buttons5.buttons()
-
-    if player_value == value:
-        print('Correct')
-    else:
-        print('Wrong')
-test_all()
+        window.addstr(y, x, 'Wrong. Press any key                       ')
+        window.refresh()
+        window.getkey()
+        return False

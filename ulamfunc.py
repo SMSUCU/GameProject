@@ -1,13 +1,11 @@
-def ulam_generator(chyslo):
-    ''' (int) -> list
-    This function returns a list of ulam numbers in sequence (chyslo)
-    >>> ulam_generator(30)
-    [1, 2, 3, 4, 6, 8, 11, 13, 16, 18, 26, 28, 36, 38, 47, 48, 53, 57, 62, 69, 72, 77, 82, 87, 97, 99, 102, 106, 114, 126, 131, 138]
-    >>> ulam_generator(15)
-    [1, 2, 3, 4, 6, 8, 11, 13, 16, 18, 26, 28, 36, 38, 47, 48, 53]
+def ulam_generator():
+    ''' None -> list
+    This function returns a list of 27 ulam numbers
+    >>> ulam_generator(27)
+    [1, 2, 3, 4, 6, 8, 11, 13, 16, 18, 26, 28, 36, 38, 47, 48, 53, 57, 62, 69, 72, 77, 82, 87, 97, 99, 102, 106, 114, 126, 131, 138]]
     '''
     ulam = [1, 2]
-    for i in range(chyslo):
+    for i in range(27):
         lst = []
         for each in ulam:
             for every in ulam:
@@ -26,9 +24,10 @@ def ulam_generator(chyslo):
 
 def ulam_test(height, width, window):
     import random
+    import buttons
     y, x = height//2 - 4, width//2 - 4
-    lst = ulam_generator(100)
-    lst1 = list(range(201))
+    lst = ulam_generator()
+    lst1 = list(range(101))
     lst1.extend(lst)
     number = random.choice(lst1)
     window.addstr(y, x, 'Is ' + str(number) + ' a Ulam number?')
@@ -43,9 +42,11 @@ def ulam_test(height, width, window):
         window.addstr(y, x, 'Correct. Press any key               ')
         window.refresh()
         window.getkey()
-        return number, True
+        window.addstr(y, x, '                                     ')
+        return True
     else:
         window.addstr(y, x, 'Wrong. Press any key                 ')
         window.refresh()
         window.getkey()
-        return number, False
+        window.addstr(y, x, '                                     ')
+        return False

@@ -18,17 +18,17 @@ def movement(window, height, width, obstacle, y, x, level):
             question_check = 0
             while question_check in range(0, 5):
                 if level == 1:
-                    trash, answer = parni.parni(
+                    answer = parni.parni(
                         height, width, level, window)
                 elif level == 2:
-                    trash, answer = parni.parni(
+                    answer = parni.parni(
                         height, width, level, window)
                 elif level == 3:
-                    trash, answer = happy.happy_test(height, width, window)
+                    answer = happy.happy_test(height, width, window)
                 elif level == 4:
-                    trash, answer = ulamfunc.ulam_test(height, width, window)
+                    answer = ulamfunc.ulam_test(height, width, window)
                 elif level == 5:
-                    answer == test4all.test_all()
+                    answer = test4all.test_all(height, width, window)
                 if answer == True:
                     question_check += 1
                 elif answer == False:
