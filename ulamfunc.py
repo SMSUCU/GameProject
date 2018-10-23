@@ -1,8 +1,8 @@
 def ulam_generator():
-    ''' None -> list
+    ''' (None) -> list
     This function returns a list of 27 ulam numbers
-    >>> ulam_generator(27)
-    [1, 2, 3, 4, 6, 8, 11, 13, 16, 18, 26, 28, 36, 38, 47, 48, 53, 57, 62, 69, 72, 77, 82, 87, 97, 99, 102, 106, 114, 126, 131, 138]]
+    >>> ulam_generator()
+    [1, 2, 3, 4, 6, 8, 11, 13, 16, 18, 26, 28, 36, 38, 47, 48, 53, 57, 62, 69, 72, 77, 82, 87, 97, 99, 102, 106, 114]
     '''
     ulam = [1, 2]
     for i in range(27):
@@ -23,6 +23,9 @@ def ulam_generator():
 
 
 def ulam_test(height, width, window):
+    '''(int, int, window) -> bool
+    This function returns result of ulam numbers test.
+    '''
     import random
     import buttons
     y, x = height//2 - 4, width//2 - 4
