@@ -1,4 +1,7 @@
 def test_all(height, width, window):
+    '''(int, int, window) -> bool
+    This function returns result of test for all number types.
+    '''
     import buttons
     import random
     import parni
