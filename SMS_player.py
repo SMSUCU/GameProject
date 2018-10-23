@@ -1,4 +1,7 @@
 def movement(window, height, width, obstacle, y, x, level):
+    '''(window, int, int, list, int, int, int) -> int, int, bool, int, int, int
+    This function defines rules of player's movements.
+    '''
     import curses
     import parni
     import happy
@@ -58,6 +61,9 @@ def movement(window, height, width, obstacle, y, x, level):
 
 
 def body(window, y, x):
+    '''(window, int, int)
+    This function draws a player
+    '''
     window.addstr(y, x+1, "_П_")
     window.addstr(y+1, x+2, "@")
     window.addstr(y+2, x, "--|--")
