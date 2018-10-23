@@ -1,5 +1,11 @@
 def entrance_level(window, height, width):
+    ''' (window, int, int)
+    This function draws zero level.
+    '''
     def tree(y, x):
+        '''(int, int)
+        This function draws tree.
+        '''
         for stick in range(8):
             for i in range(5):
                 window.addstr(y-stick, x+i, "I")
@@ -31,6 +37,9 @@ def entrance_level(window, height, width):
 
 
 def level(window, height, width, question_check):
+    '''(window, int, int, int)
+    This function draws all levels except a zero one.
+    '''
     for y in range(height - 1):
         for x in range(11):
             window.addstr(y, x, 'H')
@@ -51,6 +60,9 @@ def level(window, height, width, question_check):
 
 
 def professor(y, x, window, level):
+    '''(int, int, window, int)
+    This function draws a professor.
+    '''
     if level == 1 or level == 4:
         window.addstr(y, x + 3, "###")
         window.addstr(y+1, x + 2, "#####")
